@@ -33,7 +33,7 @@
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
         <% if user_signed_in?%>
-          <%= form_with model: @comment, url: prototype_comments_path(@prototype),local: true do |f|%>
+          <%= form_with model: [@room,@comment], url: prototype_comments_path(@prototype),local: true do |f|%>
             <div class="field">
               <%= f.label :content, "コメント" %><br />
               <%= f.text_field :content, id:"comment_content" %>
